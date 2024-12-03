@@ -1,0 +1,15 @@
+[package]
+name = "sc"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+block2 = "0.5.1"
+core-graphics2 = "0.4.1"
+global-hotkey = "0.6.3"
+image = "0.25.5"
+itertools = "0.13.0"
+objc2 = { version = "0.5.2", features = ["catch-all"] }
+objc2-foundation = "0.2.2"
+objc2-vision = { version = "0.2.2", features = ["all"] }
+winit = "0.30.5"
