@@ -104,6 +104,11 @@ fn get_text(image: &DynamicImage, callback: impl Fn(Vec<String>)) {
             VNRecognizeTextRequest::alloc(),
             from_ref(&*handler) as *mut _,
         );
+        request.setRecognitionLanguages(
+            &request
+                .supportedRecognitionLanguagesAndReturnError()
+                .unwrap(),
+        );
         request.setRecognitionLevel(VNRequestTextRecognitionLevel::Accurate);
         request.setAutomaticallyDetectsLanguage(true);
         request.setUsesLanguageCorrection(true);
