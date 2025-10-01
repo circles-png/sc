@@ -63,7 +63,9 @@ fn main() {
             .arg("/tmp/sc/capture.png")
             .status()
             .unwrap();
-        let image = open("/tmp/sc/capture.png").unwrap();
+        let Ok(image) = open("/tmp/sc/capture.png") else {
+            return;
+        };
         get_text(&image, |lines| {
             Command::new("pbcopy")
                 .stdin(Stdio::piped())
